@@ -1,8 +1,8 @@
 node {
-    stage (one) {
+    stage ('one') {
         echo 'sm'
 
-        stage (two) {
+        stage ('two') {
             echo 'hk'
         }
     }
