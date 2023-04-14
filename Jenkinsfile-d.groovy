@@ -1,6 +1,15 @@
 pipeline {
     agent any
 
+    agent  {
+        node { label 'workstation' }
+
+    }
+
+    agent {
+        label , 'terraform'
+    }
+
     stages {
 
         stage ('one') {
