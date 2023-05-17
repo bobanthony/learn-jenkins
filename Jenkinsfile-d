@@ -1,14 +1,12 @@
 pipeline {
-  //agent any
+  agent any
 
-  // Node Name agent
-//  agent {
-//    node { label 'workstation' }
-//  }
-
+   Node Name agent
   agent {
-    label 'terraform'
+    node { label 'workstation' }
   }
+
+
 
   parameters {
     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
