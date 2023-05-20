@@ -1,24 +1,17 @@
-pipeline {
-  agent any
+node {
 
-  stages {
-    stage ('one') {
-      steps {
-        sh 'command'
-          echo 'running first satge'
-      }
-    }
-    stage ('two') {
-      steps {
-        sh 'command'
-          echo 'running second stage'
-      }
-    }
-    stage ('three') {
-      steps {
-        sh 'command'
-          echo 'running third stage'
-      }
-    }
+  properties([
+    parameters([
+      string(name: 'harshitha', value: 'left-hand', description: 'one of the best left-hand')
+    ])
+  ])
+  stage('build'){
+    perform steps
+  }
+  stage('Test'){
+    perform steps
+  }
+  stage('Deploy'){
+    perform steps
   }
 }
