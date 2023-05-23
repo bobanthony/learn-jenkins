@@ -1,0 +1,51 @@
+pipeline {
+  agent {
+    node { label 'workstation' }
+  }
+
+  agent {
+    label 'Dinesh'
+  }
+    parameters {
+      string(name: 'deol', defaultvalue: 'batter', description: 'one of the best batter')
+    }
+
+    environment {
+      SAMPLE_URL = "google.com"
+      SSH        = crendentials{"SSH"}
+
+    }
+
+    stages {
+      stage ('india') {
+        when {
+          envirnment name: 'Deol', value: 'Run'
+        }
+        steps {
+          sh' have selected'
+            echo 'Good'
+        }
+      }
+      stage ('Gujarat') {
+        input {
+          message "should we continue?"
+          ok "yes", "we should"
+        }
+        steps {
+          sh 'well done'
+            echo 'Runs'
+        }
+      }
+      stage ('Hundered') {
+        steps {
+          sh 'will debut'
+            echo 'bye'
+        }
+      }
+
+      post {
+        success
+          echo 'She will play'
+      }
+    }
+}

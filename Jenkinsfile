@@ -1,4 +1,5 @@
-node {
+node ('workstation') {
+
 
   properties([
     parameters([
